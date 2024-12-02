@@ -22,7 +22,7 @@
   </b>
 </h1>
 <p>
-  Because Bolt is so powerful, it supports many popular sites. Some sites that it support are:
+  Some popular sites that Bolt supports are:
 
   - <b>GeForce NOW</b><br>
   - <b>Now.gg</b><br>
