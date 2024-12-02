@@ -17,18 +17,6 @@
   <script src="/sw.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="https://unpkg.com/@rubynetwork/rammerhead-browser" defer></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
-  <script src=""></script>
 
 </head>
 
@@ -68,17 +56,24 @@
     <h1 id="title">Bolt</h1>
   </div>
   <form id="form">
-    <input id="input" placeholder="Search the Web Freely..." />
+    <input id="input-proxy" placeholder="Search the Web Freely..." />
   </form>
   <div id="extras">
     <h1 class="etext" id="discord">Join the Discord Server!</h1>
   </div>
   <script>
+    let txt4pxy = document.getElementById('input-proxy');
     document.getElementById("extras").addEventListener("mouseover", function () {
       document.getElementById("discord").textContent = "https://discord.gg/Td7v7Acm5s";
     });
     document.getElementById("extras").addEventListener("mouseout", function () {
       document.getElementById("discord").textContent = "Join the Discord Server!";
+    });
+    function redirect(urllink) {
+    window.location.href = "/public/static/iframe.html#" + urllink;
+    }
+    txt4pxy.addEventListener("keydown", e => {
+    if (e.key === "Enter") redirect(txt4pxy.value);
     });
   </script>
 
