@@ -6,10 +6,16 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Home</title>
   <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/classroom/favicon.png" />
-  <link id="theme" rel="stylesheet" href="/public/assets/styles/main.css" />
+  <link id="theme" rel="stylesheet" href="/assets/styles/main.css" />
   <script src="/assets/js/themes.js"></script>
-  <link rel="prefetch" href="/public//scram/scramjet.worker.js" />
-  <link rel="prefetch" href="/public/scram/scramjet.shared.js" />
+  <script src="/baremux/index.js"></script>
+  <script src="/epoxy/index.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <link rel="prefetch" href="/scram/scramjet.worker.js" />
+  <link rel="prefetch" href="/scram/scramjet.shared.js" />
+  <script src="/sw.js"></script>
+  <script src="/assets/js/main.js"></script>
   <script src="https://unpkg.com/@rubynetwork/rammerhead-browser" defer></script>
 
 </head>
@@ -23,7 +29,7 @@
   </div>
 
   <div class="nav">
-    <a id="home" href="/">
+    <a id="home" href="/index.html">
       Bolt
     </a>
 
@@ -50,24 +56,17 @@
     <h1 id="title">Bolt</h1>
   </div>
   <form id="form">
-    <input id="input-proxy" placeholder="Search the Web Freely..." />
+    <input id="txt4pxy" placeholder="Search the Web Freely..." />
   </form>
   <div id="extras">
     <h1 class="etext" id="discord">Join the Discord Server!</h1>
   </div>
   <script>
-    let txt4pxy = document.getElementById('input-proxy');
     document.getElementById("extras").addEventListener("mouseover", function () {
       document.getElementById("discord").textContent = "https://discord.gg/Td7v7Acm5s";
     });
     document.getElementById("extras").addEventListener("mouseout", function () {
       document.getElementById("discord").textContent = "Join the Discord Server!";
-    });
-    function redirect(urllink) {
-    window.location.href = "/static/iframe.html#" + urllink;
-    }
-    txt4pxy.addEventListener("keydown", e => {
-    if (e.key === "Enter") redirect(txt4pxy.value);
     });
   </script>
 
@@ -76,7 +75,7 @@
   <script src="/assets/js/time.js"></script>
 
   <script>
-
+    let txt4pxy = document.getElementById('input-proxy'); function redirect(urllink) { window.location.href = "/static/iframe.html#" + urllink; } txt4pxy.addEventListener("keydown", e => { if (e.key === "Enter") redirect(txt4pxy.value); });
   </script>
 </body>
 
