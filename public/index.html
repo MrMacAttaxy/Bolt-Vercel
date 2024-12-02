@@ -67,7 +67,7 @@
   <script>
     let txt4pxy = document.getElementById('txt4pxy'); 
     function redirect(urllink) { 
-        window.location.href = "/public/static/iframe.html#" + urllink; 
+        window.location.href = "/public/static/iframe.html" + "&num;" urllink; 
     } 
     txt4pxy.addEventListener("keydown", e => { 
         if (e.key === "Enter") redirect(txt4pxy.value); 
