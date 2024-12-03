@@ -16,7 +16,7 @@ fetch('/assets/json/apps.json')
                 var ute = app.url;
                 if (localStorage.getItem("proxy") == "uv") {
                     ute = __uv$config.prefix + __uv$config.encodeUrl(ute);
-                    localStorage.setItem('url', ute);
+                    localStorage.setItem('/static/iframe.html#' + 'url', ute);
                     window.location.href = '/browser.html';
                 }
                 else if (localStorage.getItem("proxy") == "sj") {
