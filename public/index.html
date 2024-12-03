@@ -76,13 +76,22 @@
 
   <script>
     document.getElementById('input').addEventListener('keydown', function(event) {
-    document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        let urlforpxy = document.getElementById('input').value;
+        let urlforpxy = document.getElementById('input').value.trim().toLowerCase();
+        
+        // Ensure the URL starts with 'https://'
+        if (!urlforpxy.startsWith('https://')) {
+            urlforpxy = 'https://' + urlforpxy;
+        }
+
+        // Save the modified URL to localStorage
         localStorage.setItem('url', urlforpxy);
+
+        // Redirect to browser.html
         window.location.href = '/browser.html/';
     }
 });
+
   </script>
 </body>
 
