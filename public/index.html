@@ -76,9 +76,10 @@
 
   <script>
     document.getElementById('input').addEventListener('keydown', function(event) {
+    document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         let urlforpxy = document.getElementById('input').value;
-        let url = urlforpxy;
+        localStorage.setItem('url', urlforpxy);
         window.location.href = '/browser.html/';
     }
 });
