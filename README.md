@@ -1,4 +1,11 @@
 <h1>
+  Vercel Info
+</h2>
+<p>
+This project was made to make Bolt a vercel project. Everything is made by Bolt and is not ours.
+</p>
+<hr>
+<h1>
   <b>
     How it Works
   </b>
