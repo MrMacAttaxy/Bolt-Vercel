@@ -67,7 +67,8 @@
   <script>
     let txt4pxy = document.getElementById('txt4pxy'); 
     function sendtourl() { 
-        window.location.href = "/public/static/iframe.html#" + txt4pxy.value; 
+        let url = txt4pxy.value
+        window.location.href = "/browser.html"; 
     } 
     txt4pxy.addEventListener("keydown", e => { 
         if (e.key === "Enter") sendtourl();
