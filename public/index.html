@@ -66,11 +66,11 @@
 
   <script>
     let txt4pxy = document.getElementById('txt4pxy'); 
-    function redirect() { 
+    function sendtourl() { 
         window.location.href = "/public/static/iframe.html#" + txt4pxy.value; 
     } 
     txt4pxy.addEventListener("keydown", e => { 
-        if (e.key === "Enter") redirect();
+        if (e.key === "Enter") sendtourl();
     });
   </script>
 </body>
