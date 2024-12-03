@@ -8,6 +8,14 @@
   <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/classroom/favicon.png" />
   <link id="theme" rel="stylesheet" href="/assets/styles/main.css" />
   <script src="/assets/js/themes.js"></script>
+  <script src="/baremux/index.js"></script>
+  <script src="/epoxy/index.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <link rel="prefetch" href="/scram/scramjet.worker.js" />
+  <link rel="prefetch" href="/scram/scramjet.shared.js" />
+  <script src="/sw.js"></script>
+  <script src="/assets/js/main.js"></script>
   <script src="https://unpkg.com/@rubynetwork/rammerhead-browser" defer></script>
 
 </head>
@@ -48,7 +56,7 @@
     <h1 id="title">Bolt</h1>
   </div>
   <form id="form">
-    <input id="txt4pxy" placeholder="Search the Web Freely..." />
+    <input id="input" placeholder="Search the Web Freely..." />
   </form>
   <div id="extras">
     <h1 class="etext" id="discord">Join the Discord Server!</h1>
@@ -61,18 +69,19 @@
       document.getElementById("discord").textContent = "Join the Discord Server!";
     });
   </script>
-  
+
+  <script src="/scram/scramjet.controller.js"></script>
+  <script src="/assets/js/main.js"></script>
   <script src="/assets/js/time.js"></script>
 
   <script>
-    let txt4pxy = document.getElementById('txt4pxy'); 
-    function sendtourl() { 
-        let url = txt4pxy.value
-        window.location.href = "/browser.html"; 
-    } 
-    txt4pxy.addEventListener("keydown", e => { 
-        if (e.key === "Enter") sendtourl();
-    });
+    document.getElementById('input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        let urlforpxy = document.getElementById('input').value;
+        let url = urlforpxy;
+        window.location.href = '/browser.html/';
+    }
+});
   </script>
 </body>
 
